@@ -19,3 +19,5 @@ Depends:
     dplyr,
     spatialEco,
     purrr
+URL: https://github.com/ONF-AURA/geoDalle
+BugReports: https://github.com/ONF-AURA/geoDalle/issues
