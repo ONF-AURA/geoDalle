@@ -1,0 +1,21 @@
+Package: geoDalle
+Type: Package
+Title: Estimation des réserves profondes en milieu karstique
+Version: 0.1.0
+Authors@R: person("Stéphane", "Dumas", email = "stephane.dumas@onf.fr", role = c("aut", "cre"))
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.0.2
+Depends: 
+    raster,
+    sf,
+    dplyr,
+    spatialEco,
+    purrr
