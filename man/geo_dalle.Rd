@@ -2,7 +2,7 @@
 % Please edit documentation in R/geo_dalle.R
 \name{geo_dalle}
 \alias{geo_dalle}
-\title{Raster des risques de dalles}
+\title{Raster du potentiel de réserve profondes}
 \usage{
 geo_dalle(
   mnt0,
@@ -13,7 +13,8 @@ geo_dalle(
   con_geo = NULL,
   db_geo = NULL,
   db_pendage = NULL,
-  geo_not_dalle = c("j", "n", "c", "l")
+  geo_not_dalle = c("j", "n", "c", "l"),
+  buff = 500
 )
 }
 \arguments{
@@ -34,11 +35,21 @@ geo_dalle(
 \item{db_pendage}{nom de la table des points de pendafe}
 
 \item{geo_not_dalle}{vecteur des premières lettres des notations des couches de roches non meubles}
+
+\item{buff}{buffer (en m) à utiliser autour de zn_prf pour réaliser les calculs (défaut: 500m)}
 }
 \value{
 raster du risque de présence d'une dalle compact
 }
 \description{
-A croiser avec la nature géologique, afin d'éliminer les formations
-meubles (alluvions, moraines...)
+Raster du potentiel de réserve profondes
+}
+\examples{
+dir <- system.file(package = "geoDalle")
+mnt <- raster(file.path(dir, "data","mnt0.tif"))
+zn_prf <- read_sf(file.path(dir,"data","zn_prf.shp"))
+geo_meuble <- read_sf(file.path(dir,"data","geo_meuble.shp"))
+p.pendage <- read_sf(file.path(dir,"data","p.pendage.shp"))
+geo_dalle(mnt0=mnt, zn_prf=zn_prf, geo_meuble=geo_meuble, p.pendage=p.pendage)
+
 }

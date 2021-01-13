@@ -22,17 +22,17 @@
 #' @importFrom sf st_transform st_crs read_sf st_union st_buffer as_Spatial
 #' @importFrom purrr map
 #' @importFrom dplyr group_by select filter pull summarise count mutate arrange desc
-#' @importFrom tmap tm_shape tm_text
+#' @importFrom tmap tm_shape tm_text tmap_arrange tm_borders
 #' @importFrom spatialEco curvature tri classBreaks
 #' @export
 #'
-#' @example
+#' @examples
 #' dir <- system.file(package = "geoDalle")
 #' mnt <- raster(file.path(dir, "data","mnt0.tif"))
 #' zn_prf <- read_sf(file.path(dir,"data","zn_prf.shp"))
 #' geo_meuble <- read_sf(file.path(dir,"data","geo_meuble.shp"))
 #' p.pendage <- read_sf(file.path(dir,"data","p.pendage.shp"))
-#' geo_dalle(mnt0=mnt, zn_prg=zn_prf, geo_meuble=geo_meuble, p.pendage=p.pendage)
+#' geo_dalle(mnt0=mnt, zn_prf=zn_prf, geo_meuble=geo_meuble, p.pendage=p.pendage)
 #'
 geo_dalle <- function(mnt0, zn_prf=NULL, zn = NULL, geo_meuble = NULL, p.pendage = NULL,
                       con_geo = NULL, db_geo = NULL, db_pendage = NULL,
